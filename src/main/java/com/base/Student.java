@@ -1,9 +1,10 @@
 package com.base;
 
-public class Student {
+public class Student extends Person {
     private final int studentId;
 
-    public Student(int studentId) {
+    public Student(String name, int studentId) {
+        super(name);
         this.studentId = studentId;
     }
 
