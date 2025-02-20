@@ -7,12 +7,12 @@ public class Course {
     private final Teacher teacher;
     private final String name;
     private final List<Student> studentList;
-    private final int courseId;
+    private int courseId;
 
-    public Course(Teacher teacher, String name, int courseId) {
+    public Course(Teacher teacher, String name) {
         this.teacher = teacher;
         this.name = name;
-        this.courseId = courseId;
+        this.courseId = 0;
         this.studentList = new ArrayList<>();
     }
 
@@ -30,6 +30,10 @@ public class Course {
 
     public int getCourseId() {
         return courseId;
+    }
+
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
     }
 
     public void addStudent(Student student) {
