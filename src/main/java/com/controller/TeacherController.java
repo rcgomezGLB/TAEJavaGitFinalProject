@@ -4,6 +4,8 @@ import com.model.FullTimeTeacher;
 import com.model.PartTimeTeacher;
 import com.model.Teacher;
 
+import java.util.List;
+
 public class TeacherController {
     private final UniversityController universityController;
 
@@ -20,5 +22,20 @@ public class TeacherController {
         Teacher teacher = new PartTimeTeacher(name, baseSalary, yearsOfExperience, workingHours);
         this.universityController.getUniversity().addTeacherToUniversity(teacher);
         return teacher.getTeacherId();
+    }
+
+
+    public Teacher findTeacherById(int id) {
+        Teacher teacher;
+        for (Teacher _teacher: universityController.getUniversity().getTeacherList()) {
+            if (_teacher.getTeacherId() == id) {
+                return _teacher;
+            }
+        }
+        return null;
+    }
+
+    public List<Teacher> retrieveAllTeachers() {
+        return universityController.getUniversity().getTeacherList();
     }
 }

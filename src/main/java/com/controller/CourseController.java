@@ -8,27 +8,33 @@ import java.util.List;
 
 public class CourseController {
     private final UniversityController universityController;
+    private final TeacherController teacherController;
 
-    public CourseController(UniversityController universityController) {
+    public CourseController(UniversityController universityController, TeacherController teacherController) {
         this.universityController = universityController;
+        this.teacherController = teacherController;
     }
 
     public void addNewCourseToUniversity(String name, int teacherId, List<Student> studentList) {
-        Teacher teacher = findTeacherById(teacherId);
+        Teacher teacher = teacherController.findTeacherById(teacherId);
         Course newCourse = new Course(teacher, name);
+        universityController.getUniversity().addCourseToUniversity(newCourse);
         for (Student student: studentList) {
             newCourse.addStudent(student);
         }
-
     }
 
-    public Teacher findTeacherById(int id) {
-        Teacher teacher;
-        for (Teacher _teacher: universityController.getUniversity().getTeacherList()) {
-            if (_teacher.getTeacherId() == id) {
-                return _teacher;
+    public List<Course> retrieveAllCourses() {
+        return universityController.getUniversity().getCourseList();
+    }
+
+    public Course retrieveCourseById(int id) {
+        for (Course course: universityController.getUniversity().getCourseList()) {
+            if (course.getCourseId() == id) {
+                return course;
             }
         }
         return null;
     }
+
 }
