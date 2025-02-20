@@ -1,15 +1,19 @@
 package com.base;
 
 public class Student extends Person {
-    private final int studentId;
+    private int studentId;
 
-    public Student(String name, int studentId) {
+    public Student(String name) {
         super(name);
-        this.studentId = studentId;
+        this.studentId = 0;
     }
 
     public int getStudentId() {
         return studentId;
+    }
+
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
     }
 
     @Override
