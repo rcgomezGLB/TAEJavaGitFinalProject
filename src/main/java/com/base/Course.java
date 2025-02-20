@@ -10,7 +10,12 @@ public class Course {
     private int courseId;
 
     public Course(Teacher teacher, String name) {
-        this.teacher = teacher;
+        if (teacher.getTeacherId() == 0) {
+            System.out.println("Teacher " + teacher.getTeacherId() + "is not referenced to the university.\nSetting teacher to null.");
+            this.teacher = null;
+        } else {
+            this.teacher = teacher;
+        }
         this.name = name;
         this.courseId = 0;
         this.studentList = new ArrayList<>();
@@ -37,6 +42,9 @@ public class Course {
     }
 
     public void addStudent(Student student) {
+        if (student.getStudentId() == 0) {
+            System.out.println("Student " + student.toString() + " is not referenced to the university");
+        }
         studentList.add(student);
     }
 
