@@ -32,7 +32,7 @@ public class University {
         return courseList;
     }
 
-    void addStudentToUniversity(Student student) {
+    public void addStudentToUniversity(Student student) {
         if (student.getStudentId() == 0) {
             System.out.println("Error: Student " + student.toString() + " already added to a university.");
             return;
@@ -42,7 +42,7 @@ public class University {
         System.out.println("Added Student " + student.toString() + " to" + this.getName());
     }
 
-    void addCourseToUniversity(Course course) {
+    public void addCourseToUniversity(Course course) {
         if (course.getCourseId() == 0) {
             System.out.println("Error: Course " + course.toString() + " already added to a university.");
             return;
@@ -53,7 +53,7 @@ public class University {
 
     }
 
-    void addTeacherToUniversity(Teacher teacher) {
+    public void addTeacherToUniversity(Teacher teacher) {
         if (teacher.getTeacherId() == 0) {
             System.out.println("Error: Teacher " + teacher.toString() + " already added to a university.");
             return;
