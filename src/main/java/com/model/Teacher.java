@@ -1,4 +1,4 @@
-package com.base;
+package com.model;
 
 public abstract class Teacher extends Person {
     private final double baseSalary;

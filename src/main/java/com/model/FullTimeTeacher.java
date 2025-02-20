@@ -1,4 +1,4 @@
-package com.base;
+package com.model;
 
 public class FullTimeTeacher extends Teacher {
     public FullTimeTeacher(String name, double baseSalary, int yearsOfExperience) {

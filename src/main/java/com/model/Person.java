@@ -1,4 +1,4 @@
-package com.base;
+package com.model;
 
 public class Person {
     private final String name;

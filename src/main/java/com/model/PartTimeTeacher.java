@@ -1,4 +1,4 @@
-package com.base;
+package com.model;
 
 public class PartTimeTeacher extends Teacher {
     private final int workingHours;
