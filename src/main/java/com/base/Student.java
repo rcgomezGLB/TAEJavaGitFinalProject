@@ -11,4 +11,9 @@ public class Student extends Person {
     public int getStudentId() {
         return studentId;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Student(Name: %s, ID: %s)", this.getName(), studentId);
+    }
 }
