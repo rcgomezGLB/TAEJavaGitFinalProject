@@ -40,5 +40,15 @@ public class University {
         System.out.println("Added Course " + course.toString() + " to" + this.getName());
 
     }
+
+    void addTeacherToUniversity(Teacher teacher) {
+        if (teacher.getTeacherId() != 0) {
+            System.out.println("Error: Teacher " + teacher.toString() + " already added to a university.");
+            return;
+        }
+        teacher.setTeacherId(teacherList.size());
+        teacherList.add(teacher);
+        System.out.println("Added Teacher " + teacher.toString() + " to" + this.getName());
+    }
 }
 
