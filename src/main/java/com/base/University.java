@@ -19,5 +19,15 @@ public class University {
     public String getName() {
         return name;
     }
+
+    void addStudentToUniversity(Student student) {
+        if (student.getStudentId() != 0) {
+            System.out.println("Error: Student " + student.toString() + " already added to a university.");
+            return;
+        }
+        student.setStudentId(studentList.size());
+        studentList.add(student);
+        System.out.println("Added Student " + student.toString() + " to" + this.getName());
+    }
 }
 
