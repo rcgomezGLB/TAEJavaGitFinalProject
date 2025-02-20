@@ -29,5 +29,16 @@ public class University {
         studentList.add(student);
         System.out.println("Added Student " + student.toString() + " to" + this.getName());
     }
+
+    void addCourseToUniversity(Course course) {
+        if (course.getCourseId() != 0) {
+            System.out.println("Error: Course " + course.toString() + " already added to a university.");
+            return;
+        }
+        course.setCourseId(courseList.size());
+        courseList.add(course);
+        System.out.println("Added Course " + course.toString() + " to" + this.getName());
+
+    }
 }
 
