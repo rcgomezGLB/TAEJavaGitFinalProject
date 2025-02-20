@@ -20,6 +20,18 @@ public class University {
         return name;
     }
 
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
+    public List<Teacher> getTeacherList() {
+        return teacherList;
+    }
+
+    public List<Course> getCourseList() {
+        return courseList;
+    }
+
     void addStudentToUniversity(Student student) {
         if (student.getStudentId() == 0) {
             System.out.println("Error: Student " + student.toString() + " already added to a university.");
