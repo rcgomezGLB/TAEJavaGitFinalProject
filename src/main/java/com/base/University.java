@@ -21,7 +21,7 @@ public class University {
     }
 
     void addStudentToUniversity(Student student) {
-        if (student.getStudentId() != 0) {
+        if (student.getStudentId() == 0) {
             System.out.println("Error: Student " + student.toString() + " already added to a university.");
             return;
         }
@@ -31,7 +31,7 @@ public class University {
     }
 
     void addCourseToUniversity(Course course) {
-        if (course.getCourseId() != 0) {
+        if (course.getCourseId() == 0) {
             System.out.println("Error: Course " + course.toString() + " already added to a university.");
             return;
         }
@@ -42,7 +42,7 @@ public class University {
     }
 
     void addTeacherToUniversity(Teacher teacher) {
-        if (teacher.getTeacherId() != 0) {
+        if (teacher.getTeacherId() == 0) {
             System.out.println("Error: Teacher " + teacher.toString() + " already added to a university.");
             return;
         }
