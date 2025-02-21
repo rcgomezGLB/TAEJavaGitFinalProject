@@ -19,7 +19,7 @@ public class CourseController {
         Teacher teacher = teacherController.findTeacherById(teacherId);
         Course newCourse = new Course(teacher, name);
         universityController.getUniversity().addCourseToUniversity(newCourse);
-        for (Student student: studentList) {
+        for (Student student : studentList) {
             newCourse.addStudent(student);
         }
         return newCourse.getCourseId();
@@ -30,7 +30,7 @@ public class CourseController {
     }
 
     public Course retrieveCourseById(int id) {
-        for (Course course: universityController.getUniversity().getCourseList()) {
+        for (Course course : universityController.getUniversity().getCourseList()) {
             if (course.getCourseId() == id) {
                 return course;
             }

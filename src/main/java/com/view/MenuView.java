@@ -42,7 +42,7 @@ public class MenuView {
     }
 
     public int getId(String idOf) {
-        System.out.print("Insert " + idOf +" ID: ");
+        System.out.print("Insert " + idOf + " ID: ");
         int id = scanner.nextInt();
         scanner.nextLine();
         return id;
@@ -83,7 +83,7 @@ public class MenuView {
 
         showMessage("\n--- " + MenuViewUtils.getItemType(list.get(0)) + "s" + " ---");
 
-        for (T listItem: list) {
+        for (T listItem : list) {
             showMessage(listItem.toString());
         }
     }
@@ -92,7 +92,7 @@ public class MenuView {
         System.out.println();
         System.out.println(course.toString());
         System.out.println(course.getTeacher().toString());
-        for (Student student: course.getStudentList()) {
+        for (Student student : course.getStudentList()) {
             System.out.println(student.toString());
         }
     }

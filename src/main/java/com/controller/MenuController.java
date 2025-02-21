@@ -71,7 +71,7 @@ public class MenuController {
                     menuView.printList(courseController.retrieveAllCourses());
                     return;
                 case 'b':
-                    for (Course course: courseController.retrieveAllCourses()) {
+                    for (Course course : courseController.retrieveAllCourses()) {
                         menuView.printCourseDetails(course);
                     }
                     return;
@@ -102,7 +102,7 @@ public class MenuController {
         int studentsNumber = menuView.getNumber();
         List<Student> studentList = new ArrayList<>();
         for (int i = 0; i < studentsNumber; i++) {
-            menuView.showMessage("Adding student #" + ( i + 1 ) );
+            menuView.showMessage("Adding student #" + (i + 1));
             menuView.printList(studentController.retrieveAllStudents());
             int studentId = menuView.getId("student");
             studentList.add(studentController.retrieveStudentById(studentId));

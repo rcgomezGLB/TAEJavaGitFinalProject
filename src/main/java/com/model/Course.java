@@ -51,6 +51,6 @@ public class Course {
 
     @Override
     public String toString() {
-        return String.format("Course (Name: %s, ID: %d)",this.getName(),this.getCourseId());
+        return String.format("Course (Name: %s, ID: %d)", this.getName(), this.getCourseId());
     }
 }

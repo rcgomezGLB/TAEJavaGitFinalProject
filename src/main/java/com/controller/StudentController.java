@@ -29,8 +29,9 @@ public class StudentController {
 
     public List<Course> getStudentClasses(Student student) {
         List<Course> studentCourses = new ArrayList<>();
-        outer: for (Course course: universityController.getUniversity().getCourseList()) { // Linear search
-            for (Student temporalStudent: course.getStudentList()) {
+        outer:
+        for (Course course : universityController.getUniversity().getCourseList()) { // Linear search
+            for (Student temporalStudent : course.getStudentList()) {
                 if (temporalStudent == student) {
                     studentCourses.add(course);
                     continue outer;
@@ -41,7 +42,7 @@ public class StudentController {
     }
 
     public Student retrieveStudentById(int id) {
-        for (Student student: universityController.getUniversity().getStudentList()) {
+        for (Student student : universityController.getUniversity().getStudentList()) {
             if (student.getStudentId() == id) {
                 return student;
             }

@@ -18,6 +18,7 @@ public class TeacherController {
         this.universityController.getUniversity().addTeacherToUniversity(teacher);
         return teacher.getTeacherId();
     }
+
     public int addPartTimeTeacherToUniversity(String name, double baseSalary, int yearsOfExperience, int workingHours) {
         Teacher teacher = new PartTimeTeacher(name, baseSalary, yearsOfExperience, workingHours);
         this.universityController.getUniversity().addTeacherToUniversity(teacher);
@@ -26,10 +27,9 @@ public class TeacherController {
 
 
     public Teacher findTeacherById(int id) {
-        Teacher teacher;
-        for (Teacher _teacher: universityController.getUniversity().getTeacherList()) {
-            if (_teacher.getTeacherId() == id) {
-                return _teacher;
+        for (Teacher teacher : universityController.getUniversity().getTeacherList()) {
+            if (teacher.getTeacherId() == id) {
+                return teacher;
             }
         }
         return null;

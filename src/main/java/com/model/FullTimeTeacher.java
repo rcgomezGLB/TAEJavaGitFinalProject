@@ -7,6 +7,6 @@ public class FullTimeTeacher extends Teacher {
 
     @Override
     void setSalary() {
-        this.setSalary(this.getBaseSalary()*(1 + 0.1*this.getYearsOfExperience()));
+        this.setSalary(this.getBaseSalary() * (1 + 0.1 * this.getYearsOfExperience()));
     }
 }
