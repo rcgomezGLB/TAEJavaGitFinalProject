@@ -17,7 +17,7 @@ public class MenuView {
         System.out.println("a) Print all professors with its data");
         System.out.println("b) Print all classes");
         System.out.println("c) Create new student and add to existing class");
-        System.out.println("d) Create new class and add an existing teacher and existing student");
+        System.out.println("d) Create new class and add an existing teacher and existing students");
         System.out.println("e) List all classes of student ID");
         System.out.println("f) List all students");
         System.out.println("g) Exit");
