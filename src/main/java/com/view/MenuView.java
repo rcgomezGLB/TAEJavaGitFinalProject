@@ -28,9 +28,18 @@ public class MenuView {
     }
 
     public int getId() {
-        scanner.next();
         System.out.print("Insert ID: ");
         return scanner.nextInt();
+    }
+
+    public char getOption() {
+        System.out.print("Insert Option: ");
+        String input = scanner.nextLine();
+        if (input.length() > 1) {
+            showMessage("Error: allowed only size-1 input");
+            return '\0';
+        }
+        return input.charAt(0);
     }
 
     public <T> void printList(List<T> list) {
