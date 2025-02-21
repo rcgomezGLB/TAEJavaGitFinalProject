@@ -8,15 +8,17 @@ import java.util.List;
 
 public class StudentController {
     private final UniversityController universityController;
+    private final CourseController courseController;
 
-    public StudentController(UniversityController universityController) {
+    public StudentController(UniversityController universityController, CourseController courseController) {
         this.universityController = universityController;
+        this.courseController = courseController;
     }
 
-    public void addStudentToUniversity(String name, Course course) {
+    public void addStudentToUniversity(String name, int courseId) {
         Student student = new Student(name);
         this.universityController.getUniversity().addStudentToUniversity(student);
-        course.addStudent(student);
+        courseController.retrieveCourseById(courseId).addStudent(student);
     }
 
     public List<Course> getStudentClasses(Student student) {
