@@ -25,6 +25,8 @@ public class MenuController {
             switch (choice) {
                 case 'a':
                     menuView.printList(teacherController.retrieveAllTeachers());
+                case 'b':
+                    menuView.printList(courseController.retrieveAllCourses());
                 case 'd':
                     menuView.showMessage("Bye!");
                     running = false;
