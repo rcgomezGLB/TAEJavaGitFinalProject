@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuController {
-    private CourseController courseController;
-    private StudentController studentController;
-    private TeacherController teacherController;
-    private MenuView menuView;
+    private final CourseController courseController;
+    private final StudentController studentController;
+    private final TeacherController teacherController;
+    private final MenuView menuView;
 
     public MenuController(CourseController courseController, StudentController studentController, TeacherController teacherController, MenuView menuView) {
         this.courseController = courseController;
