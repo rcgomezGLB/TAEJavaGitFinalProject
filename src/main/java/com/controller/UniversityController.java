@@ -11,8 +11,8 @@ import java.util.List;
 public class UniversityController {
     private final University university;
 
-    public UniversityController(University university) {
-        this.university = university;
+    public UniversityController(String universityName) {
+        university = new University(universityName);
     }
 
     public University getUniversity() {
