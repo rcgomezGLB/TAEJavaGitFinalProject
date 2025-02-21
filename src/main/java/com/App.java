@@ -1,6 +1,7 @@
 package com;
 
 import com.controller.*;
+import com.utils.AppUtils;
 import com.view.MenuView;
 
 public class App {
@@ -13,6 +14,7 @@ public class App {
         MenuView menuView = new MenuView();
         MenuController menuController = new MenuController(courseController, studentController, teacherController, menuView);
 
+        AppUtils.initializeUniversity(universityController, studentController, teacherController, courseController);
         menuController.startMenu();
     }
 }
