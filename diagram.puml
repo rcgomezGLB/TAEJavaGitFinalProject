@@ -1,0 +1,159 @@
+@startuml
+class com.controller.CourseController {
+- UniversityController universityController
+- TeacherController teacherController
++ int addNewCourseToUniversity(String,int,List<Student>)
++ List<Course> retrieveAllCourses()
++ Course retrieveCourseById(int)
+}
+
+
+class com.view.MenuView {
+- Scanner scanner
++ void displayMenu()
++ void displayOptionBSubMenu()
++ void clearConsole()
++ void showMessage(String)
++ int getId(String)
++ int getNumber()
++ char getOption()
++ String getStudentName()
++ String getCourseName()
++ void printList(List<T>)
++ void printCourseDetails(Course)
+}
+
+
+class com.model.FullTimeTeacher {
+~ void setSalary()
+}
+
+class com.utils.MenuViewUtils {
++ {static} String getItemType(T)
+}
+
+class com.model.University {
+- String name
+- List<Student> studentList
+- List<Teacher> teacherList
+- List<Course> courseList
++ String getName()
++ List<Student> getStudentList()
++ List<Teacher> getTeacherList()
++ List<Course> getCourseList()
++ void addStudentToUniversity(Student)
++ void addCourseToUniversity(Course)
++ void addTeacherToUniversity(Teacher)
+}
+
+
+abstract class com.model.Teacher {
+- double baseSalary
+- double salary
+- int yearsOfExperience
+- int teacherId
+~ {abstract}void setSalary()
++ double getBaseSalary()
++ int getYearsOfExperience()
++ double getSalary()
++ int getTeacherId()
++ void setSalary(double)
++ void setTeacherId(int)
++ String toString()
+}
+
+
+class com.model.PartTimeTeacher {
+- int workingHours
+~ void setSalary()
+}
+
+
+class com.controller.UniversityController {
+- University university
++ University getUniversity()
+}
+
+
+class com.controller.MenuController {
+- CourseController courseController
+- StudentController studentController
+- TeacherController teacherController
+- MenuView menuView
+~ boolean running
++ void startMenu()
+- void optionA()
+- void optionB()
+- void optionC()
+- void optionD()
+- void optionE()
+- void optionF()
+- void optionG()
+- void defaultOption()
+}
+
+
+class com.utils.AppUtils {
++ {static} void initializeUniversity(StudentController,TeacherController,CourseController)
+}
+
+class com.controller.StudentController {
+- UniversityController universityController
+- CourseController courseController
++ int addStudentToUniversity(String,int)
++ void addStudentToCourse(int,int)
++ List<Course> getStudentClasses(Student)
++ Student retrieveStudentById(int)
++ List<Student> retrieveAllStudents()
+}
+
+
+class com.controller.TeacherController {
+- UniversityController universityController
++ int addFullTimeTeacherToUniversity(String,double,int)
++ int addPartTimeTeacherToUniversity(String,double,int,int)
++ Teacher findTeacherById(int)
++ List<Teacher> retrieveAllTeachers()
+}
+
+
+class com.model.Person {
+- String name
++ String getName()
+}
+
+
+class com.model.Course {
+- Teacher teacher
+- String name
+- List<Student> studentList
+- int courseId
++ Teacher getTeacher()
++ String getName()
++ List<Student> getStudentList()
++ int getCourseId()
++ void setCourseId(int)
++ void addStudent(Student)
++ String toString()
+}
+
+
+class com.App {
++ {static} void main(String[])
+}
+
+class com.model.Student {
+- int studentId
++ int getStudentId()
++ void setStudentId(int)
++ String toString()
+}
+
+
+
+
+com.model.Teacher <|-- com.model.FullTimeTeacher
+com.model.Person <|-- com.model.Teacher
+com.model.Teacher <|-- com.model.PartTimeTeacher
+com.model.Person <|-- com.model.Student
+@enduml
