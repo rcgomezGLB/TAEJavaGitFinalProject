@@ -15,13 +15,14 @@ public class CourseController {
         this.teacherController = teacherController;
     }
 
-    public void addNewCourseToUniversity(String name, int teacherId, List<Student> studentList) {
+    public int addNewCourseToUniversity(String name, int teacherId, List<Student> studentList) {
         Teacher teacher = teacherController.findTeacherById(teacherId);
         Course newCourse = new Course(teacher, name);
         universityController.getUniversity().addCourseToUniversity(newCourse);
         for (Student student: studentList) {
             newCourse.addStudent(student);
         }
+        return newCourse.getCourseId();
     }
 
     public List<Course> retrieveAllCourses() {
