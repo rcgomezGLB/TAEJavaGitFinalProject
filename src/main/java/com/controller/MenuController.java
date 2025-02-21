@@ -25,11 +25,14 @@ public class MenuController {
             switch (choice) {
                 case 'a':
                     menuView.printList(teacherController.retrieveAllTeachers());
+                    break;
                 case 'b':
                     menuView.printList(courseController.retrieveAllCourses());
+                    break;
                 case 'd':
                     menuView.showMessage("Bye!");
                     running = false;
+                    break;
                 default:
                     menuView.showMessage("Invalid Option");
             }
