@@ -42,8 +42,8 @@ public class Course {
     }
 
     public void addStudent(Student student) {
-        if (student.getStudentId() == 0) {
-            System.out.println("Student " + student.toString() + " is not referenced to the university");
+        if (student.getStudentId() == 0 || studentList.contains(student)) {
+            System.out.println("Model: Error adding student to course");
         }
         studentList.add(student);
     }

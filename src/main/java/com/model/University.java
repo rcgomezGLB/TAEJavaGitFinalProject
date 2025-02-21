@@ -33,7 +33,8 @@ public class University {
     }
 
     public void addStudentToUniversity(Student student) {
-        if (student.getStudentId() != 0) {
+        if (student.getStudentId() != 0 || studentList.contains(student)) {
+            System.out.println("Model: Error adding student to university");
             return;
         }
         studentList.add(student);
@@ -41,7 +42,8 @@ public class University {
     }
 
     public void addCourseToUniversity(Course course) {
-        if (course.getCourseId() != 0) {
+        if (course.getCourseId() != 0 || courseList.contains(course)) {
+            System.out.println("Model: Error adding course to university");
             return;
         }
         courseList.add(course);
@@ -50,7 +52,8 @@ public class University {
     }
 
     public void addTeacherToUniversity(Teacher teacher) {
-        if (teacher.getTeacherId() != 0) {
+        if (teacher.getTeacherId() != 0 || teacherList.contains(teacher)) {
+            System.out.println("Model: Error adding teacher to university");
             return;
         }
         teacherList.add(teacher);
