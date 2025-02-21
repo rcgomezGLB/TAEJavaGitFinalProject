@@ -50,13 +50,6 @@ public class Course {
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(String.format("Course \"%s\" with ID %d \n",this.getName(),this.getCourseId()));
-        stringBuilder.append(String.format("Teacher: %s \n",this.getTeacher().getName()));
-        stringBuilder.append("Student list");
-        for (Student student: studentList) {
-            stringBuilder.append(String.format("%s \n",student.toString()));
-        }
-        return stringBuilder.toString();
+        return String.format("Course \"%s\" with ID %d \n",this.getName(),this.getCourseId());
     }
 }
