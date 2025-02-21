@@ -39,7 +39,7 @@ public class MenuController {
                     studentController.addStudentToUniversity(studentName, newStudentCourseId);
                     menuView.showMessage("Created student with name " + studentName + "and added to course with ID " + newStudentCourseId);
                     break;
-                case 'd':
+                case 'g':
                     menuView.showMessage("Bye!");
                     running = false;
                     break;
