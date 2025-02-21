@@ -94,7 +94,12 @@ public class MenuController {
         menuView.showMessage("Added course" + courseName);
     }
 
-    private void optionE() {}
+    private void optionE() {
+        int id = menuView.getId("student");
+        Student student = studentController.retrieveStudentById(id);
+        menuView.showMessage("Showing all classes of student " + student.getName());
+        menuView.printList(studentController.getStudentClasses(student));
+    }
 
     private void optionF() {}
 
