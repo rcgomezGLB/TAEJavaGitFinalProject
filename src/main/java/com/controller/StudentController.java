@@ -15,9 +15,15 @@ public class StudentController {
         this.courseController = courseController;
     }
 
-    public void addStudentToUniversity(String name, int courseId) {
+    public int addStudentToUniversity(String name, int courseId) {
         Student student = new Student(name);
         this.universityController.getUniversity().addStudentToUniversity(student);
+        courseController.retrieveCourseById(courseId).addStudent(student);
+        return student.getStudentId();
+    }
+
+    public void addStudentToCourse(int studentId, int courseId) {
+        Student student = retrieveStudentById(studentId);
         courseController.retrieveCourseById(courseId).addStudent(student);
     }
 
@@ -32,6 +38,15 @@ public class StudentController {
             }
         }
         return studentCourses;
+    }
+
+    public Student retrieveStudentById(int id) {
+        for (Student student: universityController.getUniversity().getStudentList()) {
+            if (student.getStudentId() == id) {
+                return student;
+            }
+        }
+        return null;
     }
 
     public List<Student> retrieveAllStudents() {
