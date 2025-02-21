@@ -27,8 +27,8 @@ public class MenuView {
         System.out.println(message);
     }
 
-    public int getId() {
-        System.out.print("Insert ID: ");
+    public int getId(String idOf) {
+        System.out.print("Insert " + idOf +" ID: ");
         return scanner.nextInt();
     }
 
@@ -40,6 +40,16 @@ public class MenuView {
             return '\0';
         }
         return input.charAt(0);
+    }
+
+    public String getStudentName() {
+        System.out.print("Enter student name: ");
+        return scanner.next();
+    }
+
+    public String getCourseName() {
+        System.out.print("Enter student name: ");
+        return scanner.next();
     }
 
     public <T> void printList(List<T> list) {
