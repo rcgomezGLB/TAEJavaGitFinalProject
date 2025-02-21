@@ -59,6 +59,7 @@ public class University {
             return;
         }
         teacherList.add(teacher);
+        teacher.setTeacherId(teacherList.size());
         System.out.println("Added Teacher " + teacher.toString() + " to" + this.getName());
     }
 }
