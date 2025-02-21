@@ -37,8 +37,8 @@ public class University {
             System.out.println("Error: Student " + student.toString() + " already added to a university.");
             return;
         }
-        student.setStudentId(studentList.size());
         studentList.add(student);
+        student.setStudentId(studentList.size());
         System.out.println("Added Student " + student.toString() + " to" + this.getName());
     }
 
@@ -47,8 +47,8 @@ public class University {
             System.out.println("Error: Course " + course.toString() + " already added to a university.");
             return;
         }
-        course.setCourseId(courseList.size());
         courseList.add(course);
+        course.setCourseId(courseList.size());
         System.out.println("Added Course " + course.toString() + " to" + this.getName());
 
     }
@@ -58,7 +58,6 @@ public class University {
             System.out.println("Error: Teacher " + teacher.toString() + " already added to a university.");
             return;
         }
-        teacher.setTeacherId(teacherList.size());
         teacherList.add(teacher);
         System.out.println("Added Teacher " + teacher.toString() + " to" + this.getName());
     }
