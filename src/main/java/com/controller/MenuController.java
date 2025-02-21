@@ -11,16 +11,17 @@ public class MenuController {
     private final StudentController studentController;
     private final TeacherController teacherController;
     private final MenuView menuView;
+    boolean running;
 
     public MenuController(CourseController courseController, StudentController studentController, TeacherController teacherController, MenuView menuView) {
         this.courseController = courseController;
         this.studentController = studentController;
         this.teacherController = teacherController;
         this.menuView = menuView;
+        running = true;
     }
 
     public void startMenu() {
-        boolean running = true;
 
         while (running) {
             menuView.displayMenu();
@@ -47,7 +48,6 @@ public class MenuController {
                     break;
                 case 'g':
                     optionG();
-                    running = false;
                     break;
                 default:
                     defaultOption();
@@ -107,6 +107,7 @@ public class MenuController {
 
     private void optionG() {
         menuView.showMessage("Bye!");
+        running = false;
     }
 
     private void defaultOption() {
