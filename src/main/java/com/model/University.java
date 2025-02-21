@@ -34,33 +34,27 @@ public class University {
 
     public void addStudentToUniversity(Student student) {
         if (student.getStudentId() != 0) {
-            System.out.println("Error: Student " + student.toString() + " already added to a university.");
             return;
         }
         studentList.add(student);
         student.setStudentId(studentList.size());
-        System.out.println("Added Student " + student.toString() + " to" + this.getName());
     }
 
     public void addCourseToUniversity(Course course) {
         if (course.getCourseId() != 0) {
-            System.out.println("Error: Course " + course.toString() + " already added to a university.");
             return;
         }
         courseList.add(course);
         course.setCourseId(courseList.size());
-        System.out.println("Added Course " + course.toString() + " to" + this.getName());
 
     }
 
     public void addTeacherToUniversity(Teacher teacher) {
         if (teacher.getTeacherId() != 0) {
-            System.out.println("Error: Teacher " + teacher.toString() + " already added to a university.");
             return;
         }
         teacherList.add(teacher);
         teacher.setTeacherId(teacherList.size());
-        System.out.println("Added Teacher " + teacher.toString() + " to" + this.getName());
     }
 }
 

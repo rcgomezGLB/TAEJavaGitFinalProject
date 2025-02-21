@@ -27,6 +27,7 @@ public class MenuController {
         while (running) {
             menuView.displayMenu();
             char choice = menuView.getOption();
+            menuView.clearConsole();
 
             switch (choice) {
                 case 'a':
@@ -88,7 +89,7 @@ public class MenuController {
         menuView.showMessage("Select course ID to add student " + studentName);
         int newStudentCourseId = menuView.getId("course");
         studentController.addStudentToUniversity(studentName, newStudentCourseId);
-        menuView.showMessage("Created student with name " + studentName + "and added to course with ID " + newStudentCourseId);
+        menuView.showMessage("Created student with name " + studentName + " and added to course with ID " + newStudentCourseId);
     }
 
     private void optionD() {
@@ -107,7 +108,7 @@ public class MenuController {
             studentList.add(studentController.retrieveStudentById(studentId));
         }
         courseController.addNewCourseToUniversity(courseName, teacherId, studentList);
-        menuView.showMessage("Added course" + courseName);
+        menuView.showMessage("Added course " + courseName);
     }
 
     private void optionE() {

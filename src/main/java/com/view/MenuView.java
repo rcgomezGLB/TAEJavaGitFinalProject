@@ -31,6 +31,12 @@ public class MenuView {
         System.out.println("b) Include teacher and students details");
     }
 
+    public void clearConsole() {
+        for (int i = 0; i < 50; i++) {
+            System.out.println();
+        }
+    }
+
     public void showMessage(String message) {
         System.out.println(message);
     }
@@ -75,7 +81,7 @@ public class MenuView {
             return;
         }
 
-        showMessage("--- " + MenuViewUtils.getItemType(list.get(0)) + "s" + " ---");
+        showMessage("\n--- " + MenuViewUtils.getItemType(list.get(0)) + "s" + " ---");
 
         for (T listItem: list) {
             showMessage(listItem.toString());
