@@ -29,19 +29,23 @@ public class MenuView {
 
     public int getId(String idOf) {
         System.out.print("Insert " + idOf +" ID: ");
-        return scanner.nextInt();
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        return id;
     }
 
     public int getNumber() {
         System.out.print("Insert number: ");
-        return scanner.nextInt();
+        int number = scanner.nextInt();
+        scanner.nextLine();
+        return number;
     }
 
     public char getOption() {
         System.out.print("Insert Option: ");
         String input = scanner.nextLine();
-        if (input.length() > 1) {
-            showMessage("Error: allowed only size-1 input");
+        if (input.length() != 1) {
+            showMessage("Error: Invalid option format");
             return '\0';
         }
         return input.charAt(0);
@@ -49,12 +53,12 @@ public class MenuView {
 
     public String getStudentName() {
         System.out.print("Enter student name: ");
-        return scanner.next();
+        return scanner.nextLine();
     }
 
     public String getCourseName() {
-        System.out.print("Enter student name: ");
-        return scanner.next();
+        System.out.print("Enter course name: ");
+        return scanner.nextLine();
     }
 
     public <T> void printList(List<T> list) {
