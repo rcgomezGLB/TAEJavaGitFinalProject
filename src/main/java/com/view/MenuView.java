@@ -32,6 +32,11 @@ public class MenuView {
         return scanner.nextInt();
     }
 
+    public int getNumber() {
+        System.out.print("Insert number: ");
+        return scanner.nextInt();
+    }
+
     public char getOption() {
         System.out.print("Insert Option: ");
         String input = scanner.nextLine();
