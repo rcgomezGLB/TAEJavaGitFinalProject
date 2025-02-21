@@ -1,5 +1,8 @@
 package com.view;
 
+import com.utils.MenuViewUtils;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class MenuView {
@@ -19,4 +22,22 @@ public class MenuView {
         System.out.println("f) List all students");
         System.out.println("d) Exit");
     }
+
+    public void showMessage(String message) {
+        System.out.println(message);
+    }
+
+    public <T> void printList(List<T> list) {
+        if (list.isEmpty()) {
+            showMessage("Empty List");
+            return;
+        }
+
+        showMessage("--- " + MenuViewUtils.getListItemType(list) + "s" + " ---");
+
+        for (T listItem: list) {
+            showMessage(listItem.toString());
+        }
+    }
+
 }
