@@ -1,5 +1,7 @@
 package com.view;
 
+import com.model.Course;
+import com.model.Student;
 import com.utils.MenuViewUtils;
 
 import java.util.List;
@@ -21,6 +23,12 @@ public class MenuView {
         System.out.println("e) List all classes of student ID");
         System.out.println("f) List all students");
         System.out.println("g) Exit");
+    }
+
+    public void displayOptionBSubMenu() {
+        System.out.println("\nPrint all classes submenu");
+        System.out.println("a) Print only class name and ID");
+        System.out.println("b) Include teacher and students details");
     }
 
     public void showMessage(String message) {
@@ -71,6 +79,15 @@ public class MenuView {
 
         for (T listItem: list) {
             showMessage(listItem.toString());
+        }
+    }
+
+    public void printCourseDetails(Course course) {
+        System.out.println();
+        System.out.println(course.toString());
+        System.out.println(course.getTeacher().toString());
+        for (Student student: course.getStudentList()) {
+            System.out.println(student.toString());
         }
     }
 
