@@ -27,6 +27,12 @@ public class MenuView {
         System.out.println(message);
     }
 
+    public int getId() {
+        scanner.next();
+        System.out.print("Insert ID: ");
+        return scanner.nextInt();
+    }
+
     public <T> void printList(List<T> list) {
         if (list.isEmpty()) {
             showMessage("Empty List");
