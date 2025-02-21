@@ -28,48 +28,81 @@ public class MenuController {
 
             switch (choice) {
                 case 'a':
-                    menuView.printList(teacherController.retrieveAllTeachers());
+                    optionA();
                     break;
                 case 'b':
-                    menuView.printList(courseController.retrieveAllCourses());
+                    optionB();
                     break;
                 case 'c':
-                    menuView.showMessage("Adding new student");
-                    String studentName = menuView.getStudentName();
-                    menuView.showMessage("Adding student " + studentName + " to a course");
-                    menuView.printList(courseController.retrieveAllCourses());
-                    menuView.showMessage("Select course ID to add student " + studentName);
-                    int newStudentCourseId = menuView.getId("course");
-                    studentController.addStudentToUniversity(studentName, newStudentCourseId);
-                    menuView.showMessage("Created student with name " + studentName + "and added to course with ID " + newStudentCourseId);
+                    optionC();
                     break;
                 case 'd':
-                    menuView.showMessage("Adding new class");
-                    String courseName = menuView.getCourseName();
-                    menuView.showMessage("Select teacher ID to dictate the course");
-                    menuView.printList(teacherController.retrieveAllTeachers());
-                    int teacherId = menuView.getId("teacher");
-                    menuView.showMessage("How many students to include? ");
-                    int studentsNumber = menuView.getNumber();
-                    List<Student> studentList = new ArrayList<>();
-                    for (int i = 0; i < studentsNumber; i++) {
-                        menuView.showMessage("Adding student #" + ( i + 1 ) );
-                        menuView.printList(studentController.retrieveAllStudents());
-                        int studentId = menuView.getId("student");
-                        studentList.add(studentController.retrieveStudentById(studentId));
-                    }
-                    courseController.addNewCourseToUniversity(courseName, teacherId, studentList);
-                    menuView.showMessage("Added course" + courseName);
+                    optionD();
                     break;
-
+                case 'e':
+                    optionE();
+                    break;
+                case 'f':
+                    optionF();
+                    break;
                 case 'g':
-                    menuView.showMessage("Bye!");
+                    optionG();
                     running = false;
                     break;
                 default:
-                    menuView.showMessage("Invalid Option");
+                    defaultOption();
             }
 
         }
+    }
+
+    private void optionA() {
+        menuView.printList(teacherController.retrieveAllTeachers());
+    }
+
+    private void optionB() {
+        menuView.printList(courseController.retrieveAllCourses());
+    }
+
+    private void optionC() {
+        menuView.showMessage("Adding new student");
+        String studentName = menuView.getStudentName();
+        menuView.showMessage("Adding student " + studentName + " to a course");
+        menuView.printList(courseController.retrieveAllCourses());
+        menuView.showMessage("Select course ID to add student " + studentName);
+        int newStudentCourseId = menuView.getId("course");
+        studentController.addStudentToUniversity(studentName, newStudentCourseId);
+        menuView.showMessage("Created student with name " + studentName + "and added to course with ID " + newStudentCourseId);
+    }
+
+    private void optionD() {
+        menuView.showMessage("Adding new class");
+        String courseName = menuView.getCourseName();
+        menuView.showMessage("Select teacher ID to dictate the course");
+        menuView.printList(teacherController.retrieveAllTeachers());
+        int teacherId = menuView.getId("teacher");
+        menuView.showMessage("How many students to include? ");
+        int studentsNumber = menuView.getNumber();
+        List<Student> studentList = new ArrayList<>();
+        for (int i = 0; i < studentsNumber; i++) {
+            menuView.showMessage("Adding student #" + ( i + 1 ) );
+            menuView.printList(studentController.retrieveAllStudents());
+            int studentId = menuView.getId("student");
+            studentList.add(studentController.retrieveStudentById(studentId));
+        }
+        courseController.addNewCourseToUniversity(courseName, teacherId, studentList);
+        menuView.showMessage("Added course" + courseName);
+    }
+
+    private void optionE() {}
+
+    private void optionF() {}
+
+    private void optionG() {
+        menuView.showMessage("Bye!");
+    }
+
+    private void defaultOption() {
+        menuView.showMessage("Invalid option");
     }
 }
