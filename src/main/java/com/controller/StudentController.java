@@ -31,4 +31,8 @@ public class StudentController {
         }
         return studentCourses;
     }
+
+    public List<Student> retrieveAllStudents() {
+        return universityController.getUniversity().getStudentList();
+    }
 }
