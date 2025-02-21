@@ -1,6 +1,10 @@
 package com.controller;
 
+import com.model.Student;
 import com.view.MenuView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MenuController {
     private CourseController courseController;
@@ -39,6 +43,25 @@ public class MenuController {
                     studentController.addStudentToUniversity(studentName, newStudentCourseId);
                     menuView.showMessage("Created student with name " + studentName + "and added to course with ID " + newStudentCourseId);
                     break;
+                case 'd':
+                    menuView.showMessage("Adding new class");
+                    String courseName = menuView.getCourseName();
+                    menuView.showMessage("Select teacher ID to dictate the course");
+                    menuView.printList(teacherController.retrieveAllTeachers());
+                    int teacherId = menuView.getId("teacher");
+                    menuView.showMessage("How many students to include? ");
+                    int studentsNumber = menuView.getNumber();
+                    List<Student> studentList = new ArrayList<>();
+                    for (int i = 0; i < studentsNumber; i++) {
+                        menuView.showMessage("Adding student #" + ( i + 1 ) );
+                        menuView.printList(studentController.retrieveAllStudents());
+                        int studentId = menuView.getId("student");
+                        studentList.add(studentController.retrieveStudentById(studentId));
+                    }
+                    courseController.addNewCourseToUniversity(courseName, teacherId, studentList);
+                    menuView.showMessage("Added course" + courseName);
+                    break;
+
                 case 'g':
                     menuView.showMessage("Bye!");
                     running = false;
