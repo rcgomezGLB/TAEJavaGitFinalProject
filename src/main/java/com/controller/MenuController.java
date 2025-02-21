@@ -101,7 +101,9 @@ public class MenuController {
         menuView.printList(studentController.getStudentClasses(student));
     }
 
-    private void optionF() {}
+    private void optionF() {
+        menuView.printList(studentController.retrieveAllStudents());
+    }
 
     private void optionG() {
         menuView.showMessage("Bye!");
