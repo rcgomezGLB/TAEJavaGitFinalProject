@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.model.Course;
 import com.model.Student;
 import com.view.MenuView;
 
@@ -61,7 +62,22 @@ public class MenuController {
     }
 
     private void optionB() {
-        menuView.printList(courseController.retrieveAllCourses());
+        while (true) {
+            menuView.displayOptionBSubMenu();
+            char option = menuView.getOption();
+            switch (option) {
+                case 'a':
+                    menuView.printList(courseController.retrieveAllCourses());
+                    return;
+                case 'b':
+                    for (Course course: courseController.retrieveAllCourses()) {
+                        menuView.printCourseDetails(course);
+                    }
+                    return;
+                default:
+                    menuView.showMessage("Invalid option");
+            }
+        }
     }
 
     private void optionC() {
