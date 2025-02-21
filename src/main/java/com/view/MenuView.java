@@ -33,7 +33,7 @@ public class MenuView {
             return;
         }
 
-        showMessage("--- " + MenuViewUtils.getListItemType(list) + "s" + " ---");
+        showMessage("--- " + MenuViewUtils.getItemType(list.get(0)) + "s" + " ---");
 
         for (T listItem: list) {
             showMessage(listItem.toString());
