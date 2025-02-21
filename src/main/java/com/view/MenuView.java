@@ -3,7 +3,7 @@ package com.view;
 import java.util.Scanner;
 
 public class MenuView {
-    private Scanner scanner;
+    private final Scanner scanner;
 
     public MenuView() {
         scanner = new Scanner(System.in);
