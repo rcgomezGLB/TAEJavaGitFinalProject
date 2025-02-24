@@ -151,9 +151,44 @@ class com.model.Student {
 
 
 
-
+' Inheritance
 com.model.Teacher <|-- com.model.FullTimeTeacher
 com.model.Person <|-- com.model.Teacher
 com.model.Teacher <|-- com.model.PartTimeTeacher
 com.model.Person <|-- com.model.Student
-@enduml
+
+' Associations
+com.controller.UniversityController --> com.model.University
+com.controller.TeacherController --> com.controller.UniversityController
+com.controller.StudentController --> com.controller.UniversityController
+com.controller.StudentController --> com.controller.CourseController
+com.controller.MenuController --> com.controller.CourseController
+com.controller.MenuController --> com.controller.StudentController
+com.controller.MenuController --> com.controller.TeacherController
+com.controller.MenuController --> com.view.MenuView
+
+' Dependencies
+com.controller.TeacherController ..> com.model.Teacher
+com.controller.TeacherController ..> com.model.FullTimeTeacher
+com.controller.TeacherController ..> com.model.PartTimeTeacher
+com.controller.StudentController ..> com.model.Student
+com.controller.StudentController ..> com.model.Course
+com.view.MenuView ..> com.utils.MenuViewUtils
+com.utils.MenuViewUtils ..> com.model.Teacher
+com.utils.AppUtils ..> com.controller.TeacherController
+com.utils.AppUtils ..> com.controller.CourseController
+com.utils.AppUtils ..> com.controller.StudentController
+com.App ..> com.controller.TeacherController
+com.App ..> com.controller.UniversityController
+com.App ..> com.controller.CourseController
+com.App ..> com.controller.StudentController
+com.App ..> com.view.MenuView
+com.App ..> com.controller.MenuController
+com.App ..> com.utils.AppUtils
+
+' Aggregations
+com.model.Course o-- com.model.Teacher
+com.model.Course o-- com.model.Student
+com.model.University o-- com.model.Student
+com.model.University o-- com.model.Teacher
+com.model.University o-- com.model.Course
