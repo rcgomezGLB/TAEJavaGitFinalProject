@@ -25,4 +25,4 @@ Upon running the application, you will be presented with a menu. Use the corresp
 
 ## UML Diagram
 
-![UML Diagram](diagram.svg)
+![UML Diagram](diagram.png)
